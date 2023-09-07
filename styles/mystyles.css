@@ -1,0 +1,38 @@
+/* global */
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --secondary: #4cc9f0;
+    --primary: #b8b8ff;
+    --accent: #f8f7ff;
+}
+body{
+    background-color: var(--secondary);
+}
+p{
+    line-height: 2;
+}
+/* utilities */
+.grid-two-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* header  */
+.site-header{
+    background-color: var(--primary);
+    height: 15rem;
+}
+
+/* menu */
+.img-container{
+    background-color: var(--primary);
+    border-radius: 50%;  /* the radius of the div bar  */
+}
+.home-img{
+    border-radius: 50%;
+}
+
