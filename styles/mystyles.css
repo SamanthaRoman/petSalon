@@ -4,35 +4,112 @@
     margin: 0;
 }
 :root{
-    --secondary: #4cc9f0;
-    --primary: #b8b8ff;
-    --accent: #f8f7ff;
+    --secondary: #fda7f0;
+    --primary: #f80ad5;
+    --accent: #49cdfd;
 }
-body{
-    background-color: var(--secondary);
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    font-weight: bolder;
+    color: black;
+}
+
+body,html{ 
+    /* full page image  */
+    height: 100%;;
+}
+.bg{
+    /* the image used */
+    background-image: url(../img/bgMain.png);
+    /* full height of page  */
+    height: 100%;
+    /* center and scal the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 p{
     line-height: 2;
 }
+
+
+
 /* utilities */
 .grid-two-container{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
+.container{
+    /* effect c div .bar in reg html 
+    to see what effecting change background color*/
+    /* background-color: red; */
+    width: 80%; /* width of the container  */
+    /* to center it marg l&r auto  */
+    margin-right: auto;
+    margin-left: auto;
+}
+.box-shadow{
+    box-shadow: 2px 2px 2px 2px var(--accent);
+    border-radius: .2rem;
+    margin: 1rem 3rem;
+    background-color: white;
+    padding: .5rem; /* inside of each row  */
+    
+}
+/* .flex-vertical{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
 
+} */
 /* header  */
 .site-header{
-    background-color: var(--primary);
+    background-color: white;
     height: 15rem;
 }
 
 /* menu */
-.img-container{
+/* .img-container{
     background-color: var(--primary);
     border-radius: 50%;  /* the radius of the div bar  */
-}
-.home-img{
-    border-radius: 50%;
-}
 
+/* .home-img{
+    border-radius: 50%;
+} */ 
+
+
+/* register  */
+.reg-header{
+    /* effect C div .container & .flex-vertical */
+    background-color: #f80ad5;
+}
+.flex-vertical{
+    /* effect c div .bar  */
+
+}
+.bar{
+    /* background-color: red; */
+    display: flex;/* fromo up and down to next to eachother  */
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* change color of font  */
+    height: 12vh;/* changes the height of the div  */
+    
+/* effects C a tag and nav  */
+}
+.bar nav{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 10vh; */
+    align-items: center;
+    font-size: smaller;
+    
+}

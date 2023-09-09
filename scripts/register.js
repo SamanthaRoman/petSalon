@@ -13,32 +13,50 @@ let salon = {
         {
             name:"Scooby",
             age:60,
+            gender:"Male",
             breed:"Dane",
-            service:"Grooming"
+            service:"In & Out Grooming"
         },
         {
-            name:"Goofy",
-            age:10,
-            breed:"Mixed",
-            service:"Vaccines"
+            name:"Scrappy",
+            age:12,
+            gender:"Female",
+            breed:"Cane Corso",
+            service:"Deshedding"
         },
         {
-            name:"Speedy",
-            age:75,
-            breed:"Mixed",
-            service:"Nails cut"
+            name:"Milo",
+            age:22,
+            gender:"Pug",
+            breed:"Dane",
+            service:"Nail Triming"
         },
-
-    ]
+    ],
 }
 
-function displayPetNames(){   //create the function
-    // lets now display each one. 
+// function register(){
+//     console.log("registered Pet working");
+//     let pet = document.getElementById("txtPetName").value 
+//     console.log(pet)
+// }
+
+
+function petsRegistered(){   //create the function
+
+    // lets now display each one.
+    var textName; 
     for (let i = 0; i < salon.pets.length; i++) {
-        console.log(salon.pets.length);
-        
+        var result = document.getElementById("petsName").innerHTML+=`
+        <p class="box-shadow">${i+1}. ${salon.pets[i].name}</p>
+        `
+        numPets();
+        console.log(salon.pets[i].name);       
     }
 
 }
+petsRegistered();
 
-displayPetNames();   //run the function
+function numPets(){
+    let total = document.getElementById("totalPets").innerHTML=`
+    <p>${salon.pets.length}</p>`
+};
