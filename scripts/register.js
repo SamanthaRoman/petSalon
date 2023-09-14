@@ -36,10 +36,37 @@ const inputService = document.getElementById("txtService");
 
 function isValid(aPet){
     let validation = true; // assuming its all fine. 
+    // now we need to have them remove the error class upon validation
+    inputName.classList.remove("alert-error");
+    inputAge.classList.remove("alert-error");
+    inputBreed.classList.remove("alert-error");
+    inputGender.classList.remove("alert-error");
+    inputService.classList.remove("alert-error");
 
     if(aPet.name==""){
         validation=false;
-        alert("Please add your pets name");;
+        // alert("Please add your pets name");;
+        inputName.classList.add("alert-error"); // this line displays the alert error
+    }
+    if(aPet.age==""){
+        validation=false;
+        // alert("Please add your pets name");;
+        inputAge.classList.add("alert-error"); // this line displays the alert error
+    }
+    if(aPet.breed==""){
+        validation=false;
+        // alert("Please add your pets name");;
+        inputBreed.classList.add("alert-error"); // this line displays the alert error
+    }
+    if(aPet.gender==""){
+        validation=false;
+        // alert("Please add your pets name");;
+        inputGender.classList.add("alert-error"); // this line displays the alert error
+    }
+    if(aPet.service==""){
+        validation=false;
+        // alert("Please add your pets name");;
+        inputService.classList.add("alert-error"); // this line displays the alert error
     }
 
     return validation;
@@ -71,6 +98,8 @@ function register(){
     if(isValid(newPet)==true){
         //now we can push the new pet to the array and then clear the input.
         salon.pets.push(newPet);
+        displayCards();
+        displayTable();
         clearInputs();
     }
 }
@@ -91,6 +120,8 @@ function init(){
     // push your pets into the pets array
     salon.pets.push(pet1,pet2,pet3);
     console.log(pet1,pet2,pet3); // display them in console.
+    displayCards();
+    displayTable();
 }
 
 console.log(salon.pets); // display the array with pets added to it.
