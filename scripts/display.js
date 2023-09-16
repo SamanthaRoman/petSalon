@@ -17,6 +17,7 @@ function displayCards(){
             <p>Gender: ${pet.gender}</p>
             <p>Breed: ${pet.breed}</p>
             <p>Service: ${pet.service}</p>
+            <p>Phone Number: ${pet.phone}</p>
         </div>
         `
     }
@@ -36,12 +37,17 @@ function displayTable(){
         let pet = salon.pets[i];
         tr+=
         `
-            <tr>
+            <tr id="${pet.id}">
                 <td>${pet.name}</td>
                 <td>${pet.age}</td>
                 <td>${pet.gender}</td>
                 <td>${pet.breed}</td>
                 <td>${pet.service}</td>
+                <td>${pet.phone}</td>
+                <td>
+                    <button onClick="deletePet(${pet.id})" class="btn"><i class="fa-solid fa-trash" style="color: #b41494;"></i></button>
+                </td>
+
             </tr>
         `
     }

@@ -14,29 +14,35 @@ font-family: 'Raleway', sans-serif; */
 }
 a{
     text-decoration: none;
-    color: white;
+    color: var(--primary);
 }
 a nav{
-    color: white;
+    color: var(--primary);
 }
 a:hover{
     font-weight: 900;
     
 }
-
-body,html{ 
-    /* full page image  */
-    height: 100%;;
+body, html{
+    height: 100%;
+}
+.hover{
+    font-weight: 900;
 }
 .bg{
     /* the image used */
-    background-image: url(../img/bgMain.png);
-    /* full height of page  */
-    height: 100%;
-    /* center and scal the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-image: url(../img/bgMain.png); */
+    /* set rules to fill background  */
+    background-image: url(../img/light\ background.png);
+    min-height: 100%; 
+    min-width: 1024px; 
+    /* set proportion scaling  */
+    width: 100%;
+    height: auto;
+    /* Set up position */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
 }
 h1{
     font-family: 'DM Serif Display', serif; 
@@ -60,9 +66,11 @@ p{
 .alert-error{
     background-color: rgb(248, 167, 167);
 }
-.required:after { content: "*"; color: red};
-
-
+.alert-search{
+    border-left: 10px solid var(--primary);
+}
+.required:after { content: "*"; color: red
+}
 .container{
     /* effect c div .bar in reg html 
     to see what effecting change background color*/
@@ -72,54 +80,65 @@ p{
     margin-right: auto;
     margin-left: auto;
 }
+.block{
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+}
 .box-shadow{
     box-shadow: 2px 2px 2px 2px var(--accent);
     border-radius: .2rem;
     margin: 1rem 3rem;
     background-color: white;
     padding: .5rem; /* inside of each row  */
-    margin-top: 3rem;
-    
+    margin-top: 5rem;
 }
-/* .flex-names{
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80%;
-
-} */
-/* header  */
+/* header */
 .site-header{
-    background-color: var(--primary);
-    height: 15rem;
+    background-image: url(https://www.bulldogpros.com/wp-content/uploads/Untitled-design-4-8.png);
+    height: 40vh;
+    background-size: cover;
+    background-position: 50% 25%;
 }
 
-/* menu */
-/* .img-container{
-    background-color: var(--primary);
-    border-radius: 50%;  /* the radius of the div bar  */
-
-/* .home-img{
-    border-radius: 50%;
-} */ 
-
-
-/* register  */
+/* register */
 .reg-header{
     /* effect C div .container & .flex-vertical */
+    background-color: white;
+    border-bottom: solid #f80ad5;
+}
+.btn{
+    border-color: var(--primary);
+    border: 2rem;
+    background-color: #fda7f0;
+}
+.btn:hover{
     background-color: #f80ad5;
 }
 .flex-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
+.intro-img{
+    width: 10%;
+    align-items: center;
+    margin-left: -15rem;
+    padding-left: 10rem;
+}
+.intro-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: normal;
+}
+
 .flex-item{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 .bar{
     /* background-color: red; */
@@ -127,7 +146,7 @@ p{
     justify-content: space-between;
     align-items: center;
     color: white; /* change color of font  */
-    height: 12vh;/* changes the height of the div  */
+    /* changes the height of the div  */
     
 /* effects C a tag and nav  */
 }
@@ -138,8 +157,44 @@ p{
     align-items: center;
     /* background-color: red; */
 }
+.flex-logo p{
+    font-size: small;
+    font-weight: bold;
+    margin-top: -.5rem;
+    color: #f80ad5;
+}
+.flex-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    /* background-color: red; */
+}
+.flex-footer img{
+    width: 5rem;
+}
 .flex-logo img{
-    width: 65px;
+    width: 5rem;
+    margin-bottom: .8rem;
+}
+.services{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -2rem;
+    /* background-color: red; */
+
+}
+.services h1{
+    text-align: center;
+    margin-top: -3rem;
+    color: var(--primary);
+}
+.services img{
+    width: 20rem;
 }
 .bar nav{
     /* background-color: red; */
@@ -164,8 +219,152 @@ p{
     border-radius: 1rem;
     padding: 1rem;
 }
-.table{
-    width: 80%;
+.intro{
+    background-color: white;
+    display: flex;
+    width: 50%;
+    margin-top: 5rem;
+    margin-left: 25rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 3rem;
+}
+.intro h1{
+    color: var(--accent);
+    font-size: x-large;
+    /* background-color: red; */
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+.white-container{
+    background-color: white;
+    margin-top: 5rem;
+}
+.contact-btn{
+    background-color: var(--secondary);
+    border: solid var(--primary);
+    margin: 5rem;
+    padding: 2rem;
     margin-right: auto;
     margin-left: auto;
 }
+
+/* footer  */
+.footer{
+    background-color: var(--primary);
+}
+
+
+/* contact  */
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-container img{
+    width: 50%;
+    border: solid var(--primary);
+}
+.contact-form{
+    background-color: var(--secondary);
+    padding: 1rem;
+    width: 40%;
+    margin-top: -50px;
+    border-radius: 5px;
+}
+.form-control{
+    margin: 10px;
+    /* background-color: red; */
+}
+.form-control label{
+    /* background-color: red; */
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 5px;
+}
+.form-control input{
+    /* background-color: red; */
+    padding: 5px;
+    width: 70%;
+}
+.form-control textarea{
+    /* background-color: red; */
+    padding: 5px;
+    width: 70%;
+}
+.btn-message{
+    padding: 5px;
+    background-color: white;
+    border-color: #f80ad5;
+    width: 40%;
+}
+.btn-align{
+    text-align: center;
+}
+
+/* services  */
+h3{
+    color: var(--primary);
+    font-size: xx-large;
+    text-align: center;
+    /* margin-top: 3rem; */
+
+}
+.services-img img{
+    width: 30rem;
+}
+.services-txt h1{
+    text-align: center;
+    color: #f80ad5;
+}
+.services-txt b{
+    color: var(--primary);
+    font-weight: 900;
+}
+.white-bg{
+    background-color:rgba(255, 255, 255, 0.69);
+    margin-top: -2rem;;
+}
+.btn-book{
+    padding: .5rem;
+    width: 50%;
+    font-size: x-large;
+    color: white;
+    background-color: var(--accent);
+    border: solid #f80ad5;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+}
+.testimonial{
+    background-color: rgba(255, 255, 255, 0.69);
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.services-h3{
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.69);
+    text-shadow: 1px 1px var(--secondary);
+}
+
+
+
+
+/* @media (max-width:767px){
+    html{
+        font-size: 65%;
+    }
+    .intro-img{
+        width: 2rem;
+        align-items: center;
+        margin-left: -15rem;
+        padding-left: 1rem;
+    }
+} */
+
+
+

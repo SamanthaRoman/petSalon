@@ -19,12 +19,16 @@ let salon = {
 // constructor funciton with all the properties we want to assign to the function.
 // then we pass each property to the function so we can test it and hardcode the values 
 // using the init function. 
-function Pet(name,age,gender,breed,service){
+let x = 0;
+function Pet(name,age,gender,breed,service,phone){
     this.name=name;
     this.age=age;
     this.gender=gender;
     this.breed=breed;
     this.service=service;
+    this.phone=phone;
+    this.id=x++ //this automatically adds the id so we can use this
+    // to delete the element when we click our delete button.
 }
 // create inputs const variables so we can reuse them to clear the form ar for form validation
 // so we aren't typing over and over. 
@@ -33,6 +37,7 @@ const inputAge = document.getElementById("txtAge");
 const inputGender = document.getElementById("txtGender");
 const inputBreed = document.getElementById("txtBreed");
 const inputService = document.getElementById("txtService");
+const inputPhone = document.getElementById("txtPhoneNum");
 
 function isValid(aPet){
     let validation = true; // assuming its all fine. 
@@ -42,6 +47,7 @@ function isValid(aPet){
     inputBreed.classList.remove("alert-error");
     inputGender.classList.remove("alert-error");
     inputService.classList.remove("alert-error");
+    inputPhone.classList.remove("alert-error");
 
     if(aPet.name==""){
         validation=false;
@@ -68,6 +74,11 @@ function isValid(aPet){
         // alert("Please add your pets name");;
         inputService.classList.add("alert-error"); // this line displays the alert error
     }
+    if(aPet.phone==""){
+        validation=false;
+        // alert("Please add your pets name");;
+        inputPhone.classList.add("alert-error"); // this line displays the alert error
+    }
 
     return validation;
 
@@ -84,7 +95,7 @@ function register(){
 // 4. then console.log the values to display them on the console.
     console.log(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value)
 // 5. create a new pet create a let variable to store the new pet into. 
-    let newPet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value)
+    let newPet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value, inputPhone)
     console.log(newPet, "Im the new pet")
 // 6. push the new pet to the pets array inside the salon
     // salon.pets.push(newPet);
@@ -111,18 +122,50 @@ function clearInputs(){
     inputGender.value="";
     inputBreed.value="";
     inputService.value="";
+    inputPhone.value="";
 }
 
+function deletePet(petId){
+    // console.log("deleting", petId); 
+    let deleteIndex;
+    for(let i=0;i<salon.pets.length;i++){
+        let pet=salon.pets[i];
+        if(petId==pet.id){
+            deleteIndex = i; // assigning the id to the variable deleteIndex. 
+        }
+    }
+    document.getElementById(petId).remove(); //remove from html
+    salon.pets.splice(deleteIndex,1);
+    // splice delete that id and only one element. 
+}
+
+function search(){
+    let inputSearch = document.getElementById("txtSearch").value;
+    console.log(inputSearch);
+    for(let i=0;i<salon.pets.length;i++){
+        let pet=salon.pets[i];
+        if(inputSearch.toLowerCase()==pet.name.toLowerCase()){
+            // what do you want to do it if its found
+            document.getElementById(pet.id).classList.add("alert-search");
+        }else{
+            document.getElementById(pet.id).classList.remove("alert-search");
+        }
+        ;
+}
+
+}
 function init(){
-    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Grooming");
-    let pet2 = new Pet("Scrappy", 30, "Female", "Corso", "Nail Trim");
-    let pet3 = new Pet("Milo", 10, "Male", "Yorkie", "Vaccines");
+    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Grooming", "223-454-6577");
+    let pet2 = new Pet("Scrappy", 30, "Female", "Corso", "Nail Trim",  "122-437-0098");
+    let pet3 = new Pet("Milo", 10, "Male", "Yorkie", "Vaccines", "457-098-6543");
     // push your pets into the pets array
     salon.pets.push(pet1,pet2,pet3);
     console.log(pet1,pet2,pet3); // display them in console.
     displayCards();
     displayTable();
 }
+
+
 
 console.log(salon.pets); // display the array with pets added to it.
 

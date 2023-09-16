@@ -11,7 +11,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,400;0,600;1,700&family=Raleway:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">    
 </head>
+
+
 <body>
-    
+    <header>
+        <div class="container flex-vertical"> 
+            <!-- flex-vertical effects only the div child -->
+            <div class="bar">
+                <!-- class bar only effect a tag and nav  -->
+                <div class="flex-logo">
+                    <a href="index.html"><img src="./img/pinkLogo.png" alt="pink logo"></a>
+                    <div>
+                        <a href="index.html"><h1>The Fashion Pet</h1></a>
+                        <a href="index.html"><p>Where Fur Babies Get The Royal Treatment</p></a>                           
+                    </div>
+                </div>
+                <nav>
+                    <a id="services" href="services.html">Services</a>
+                    <a href="register.html">Register</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="bg">
+        <div class="contact-container">
+            <img src="./img/contactus.png" alt="dog with a phone">
+            <form class="contact-form">
+                <div class="form-control">
+                    <label>Name:</label>
+                    <input type="text" id="txtName">
+                </div>
+                <div class="form-control">
+                    <label>Email:</label>
+                    <input type="email" id="txtEmail">
+                </div>
+                <div class="form-control">
+                    <label>Message:</label>
+                    <textarea id="txtMessage"></textarea>
+                </div>
+                <div class="btn-align">
+                    <button class="btn-message">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+    </footer>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/mystyles.css">
     <script src="https://kit.fontawesome.com/434500d812.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/lgIconFixed.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/pinkLogo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,400;0,600;1,700&family=Raleway:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
@@ -20,23 +20,12 @@
                 <div class="bar">
                     <!-- class bar only effect a tag and nav  -->
                     <div class="flex-logo">
-                        <a href="index.html"><img src="./img/whiteicon.png" alt="white logo"></a>
-                        <a href="index.html"><h1>The Fashion Pet</h1></a>
+                        <a href="index.html"><img src="./img/pinkLogo.png" alt="pink logo"></a>
+                        <div>
+                            <a href="index.html"><h1>The Fashion Pet</h1></a>
+                            <a href="index.html"><p>Where Fur Babies Get The Royal Treatment</p></a>                           
+                        </div>
                     </div>
-                    <!-- <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul> -->
                     <nav>
                         <a id="services" href="services.html">Services</a>
                         <a href="register.html">Register</a>
@@ -47,9 +36,10 @@
         </header>
         
 
-        <main>
+        <main class="container">
             <div class="box-shadow">
-                <h2>Register Request</h2>
+                <h2>Registration Request Form</h2>
+                <p>Fill out the form below:</p>
                 <div class="mb-3">
                     <label class="form-label required">Name</label>
                     <input class="form-control required" type="text" id="txtName">
@@ -79,10 +69,17 @@
                         <option value="vaccines">Vaccines</option>
                     </select>
                 </div>
-                <button class="btn btn-primary" onclick="register();">Register</button>
+                <div class="mb-3">
+                    <label class="form-label required">Phone Number</label>
+                    <input class="form-control" type="text" placeholder="ex: 123-333-4343" id="txtPhoneNum">
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn confetti-button" onclick="register(), confetti();">🎉 Register 🎉</button>
+                </div>
             </div>
             <div class="box-shadow">
-                <h2>Registed Pets</h2>
+                <h2>Registered Pets</h2>
+
                 <div>
                     <div id="pets"></div>
                 </div>
@@ -90,14 +87,20 @@
             <div class="box-shadow">
                 <h2>Pets In Line For Services</h2>
                 <div>
-                    <div class="">
+                    <div>
+                        <input type="search" id="txtSearch">
+                        <button class="btn" onClick="search()"><i class="fa-solid fa-magnifying-glass" style="color: #f80ad5;"></i></button>
+                    </div>
+                    <div>
                         <table class="pet table">
-                            <thead class="thead-dark">
+                            <thead>
                                     <th>Name</th>
                                     <th>Age</th>
                                     <th>Gender</th>
                                     <th>Breed</th>
                                     <th>Service</th>
+                                    <th>Phone Number</th>
+                                    <th>Actions</th>
                             </thead>
                             <tbody id="petTable">
                                 
@@ -110,6 +113,7 @@
         
         <script src="./scripts/register.js"></script>
         <script src="./scripts/display.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     </div>
 </body>
 </html>
